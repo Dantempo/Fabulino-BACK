@@ -17,7 +17,7 @@ public class FabulinoApplication {
 
 	// Verificar conexión con la base de datos al inicio
     @Bean
-    private CommandLineRunner comprobarConexionBD(DataSource dataSource) {
+    CommandLineRunner comprobarConexionBD(DataSource dataSource) {
     	return new CommandLineRunner() {
     	    @Override
     	    public void run(String... args) {
