@@ -1,11 +1,14 @@
 package com.fabulino.registro.entity;
 
+import java.util.List;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -22,7 +25,10 @@ public class registroEntityCorreo {
 
 	@OneToOne(mappedBy = "id_correo", cascade = CascadeType.ALL)
 	public registroEntityUsuario usuarios;
-
+	
+	@OneToMany(mappedBy = "id_correo", cascade = CascadeType.ALL)
+	public List<registroEntityInformador> informador;
+	
 	public registroEntityCorreo() {
 		super();
 	}

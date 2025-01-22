@@ -1,6 +1,10 @@
 
 package com.fabulino.registro.entity;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
+
 // Esta clase representa la entidad mapeada a la tabla registro_toques en la base de datos. 
 // Es utilizada por JPA para interactuar directamente con los datos almacenados.
 // Representa los datos que se guardan en la tabla registro_toques de la base de datos.
@@ -12,6 +16,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -22,16 +27,20 @@ public class registroEntityUsuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-generación del ID
 	private Long id;
+	
+	@OneToMany(mappedBy = "id_usuario", cascade = CascadeType.ALL)
+	public List<registroEntityInformador> informador;
 
 	@Column(name = "nombre", nullable = false)
 	private String nombre;
 
 	@OneToOne
-	@JoinColumn(name = "id_correo", referencedColumnName = "id")
+	@JoinColumn(name = "correo", referencedColumnName = "id")
 	private registroEntityCorreo id_correo;
 
+
 	@Column(name = "contraseña", nullable = false)
-	private int contraseña;
+	private String contraseña;
 
 	public registroEntityUsuario() {
 		super();
@@ -61,11 +70,11 @@ public class registroEntityUsuario {
 		this.id_correo = id_correo;
 	}
 
-	public int getContraseña() {
+	public String getContraseña() {
 		return contraseña;
 	}
 
-	public void setContraseña(int contraseña) {
+	public void setContraseña(String contraseña) {
 		this.contraseña = contraseña;
 	}
 }

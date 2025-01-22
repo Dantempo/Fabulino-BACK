@@ -21,17 +21,17 @@ public class registroServiceImpl implements registroService{
 		private registroRepository repository; // Inyectamos el repositorio
 
 		@Override
-		public String guardar(DatosRegistroDto DatosRegistroDto) {
+		public String guardar(DatosRegistroDto datosRegistroDto) {
 			try {
 
 				// Llama al método del repositorio pasando todo por parametros
-				repository.insertarCorreo(DatosRegistroDto.getCorreo());
-				repository.insertarUsuario(DatosRegistroDto.getNombre(), repository.getIdCorreo(DatosRegistroDto.getCorreo()), DatosRegistroDto.getContraseña() );
-				repository.insertarInformador(repository.getIdCorreo(DatosRegistroDto.getCorreo()), repository.getIdUsuario(DatosRegistroDto.getNombre()), DatosRegistroDto.getTipo());
+				repository.insertarCorreo(datosRegistroDto.getCorreo());
+				repository.insertarUsuario(datosRegistroDto.getNombre(), repository.getIdCorreo(datosRegistroDto.getCorreo()), datosRegistroDto.getContraseña() );
+				repository.insertarInformador(repository.getIdUsuario(datosRegistroDto.getNombre()), repository.getIdCorreo(datosRegistroDto.getCorreo()), datosRegistroDto.getTipo());
 
 				return "Registro guardado correctamente";
 			} catch (Exception e) {
-				e.printStackTrace();
+				e.printStackTrace();				
 				return "Error al guardar los datos: " + e.getMessage();
 			}
 		}
