@@ -5,24 +5,28 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
-//@Entity
-//@Table(name = "informadores") // Especificamos la tabla de la base de datos
+@Entity
+@Table(name = "informadores") // Especificamos la tabla de la base de datos
 
 public class registroEntityInformador {
-	/*@Id
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-generación del ID
 	private Long id;
+	
+	@OneToOne
+	@JoinColumn(name = "id_usuario", referencedColumnName = "id")
+	private registroEntityUsuario id_usuario;
 
-	@Column(name = "id_usuario", nullable = false)
-	private Long id_usuario;
-
-	@Column(name = "id_correo", nullable = false)
-	private String id_correo;
+	@OneToOne
+	@JoinColumn(name = "id_correo", referencedColumnName = "id")
+	private registroEntityCorreo id_correo;
 
 	@Column(name = "tipo", nullable = false)
-	private int tipo;
+	private String tipo;
 
 	public Long getId() {
 		return id;
@@ -32,28 +36,28 @@ public class registroEntityInformador {
 		this.id = id;
 	}
 
-	public String getId_correo() {
+	public registroEntityCorreo getId_correo() {
 		return id_correo;
 	}
 
-	public void setId_correo(String id_correo) {
+	public void setId_correo(registroEntityCorreo id_correo) {
 		this.id_correo = id_correo;
 	}
 
-	public Long getId_usuario() {
+	public registroEntityUsuario getId_usuario() {
 		return id_usuario;
 	}
 
-	public void setId_usuario(Long id_usuario) {
+	public void setId_usuario(registroEntityUsuario id_usuario) {
 		this.id_usuario = id_usuario;
 	}
 
-	public int getTipo() {
+	public String getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(int tipo) {
+	public void setTipo(String tipo) {
 		this.tipo = tipo;
-	}*/
+	}
 
 }

@@ -14,36 +14,33 @@ import com.fabulino.registro.entity.registroEntityUsuario;
 
 @Repository
 
-public interface registroRepository extends JpaRepository<registroEntityUsuario, Long> {	
-	
-	@Transactional
-	@Query(value = "SELECT id FROM correos WHERE correo = :correo", nativeQuery = true)
-	Long getIdCorreo(@Param("correo") String correo);
-	
-	@Transactional
-	@Query(value = "SELECT id FROM usuarios WHERE usuario = :usuario", nativeQuery = true)
-	Long getIdUsuario(@Param("usuario") String usuario);
-	
-	
+public interface registroRepository extends JpaRepository<registroEntityUsuario, Long> {		
 	@Modifying
 	@Transactional
 	@Query(value = "INSERT INTO correos (correo) "
 			+ "VALUES (:correo)", nativeQuery = true)
 	void insertarCorreo(@Param("correo") String correo);
+	
+	@Transactional
+	@Query(value = "SELECT id FROM correos WHERE correo = :correo", nativeQuery = true)
+	Long getIdCorreo(@Param("correo") String correo);
 
 	
 	@Modifying
 	@Transactional
-	@Query(value = "INSERT INTO usuarios (nombre, id_email, contraseña) "
+	@Query(value = "INSERT INTO usuarios (nombre, correo, contraseña) "
 			+ "VALUES (:nombre, :id_correo, :contraseña)", nativeQuery = true)
-
-	void insertarUsuario(@Param("nombre") String nombre, @Param("id_email") Long id_email,
+	void insertarUsuario(@Param("nombre") String nombre, @Param("id_correo") Long id_correo,
 			@Param("contraseña") String contraseña);
 	
+	@Transactional
+	@Query(value = "SELECT id FROM usuarios WHERE nombre = :nombre", nativeQuery = true)
+	Long getIdUsuario(@Param("nombre") String nombre);
+	
 	@Modifying
 	@Transactional
-	@Query(value = "INSERT INTO inforamdores (id_usuario, id_correo, tipo) "
+	@Query(value = "INSERT INTO informadores (id_usuario, id_correo, tipo) "
 			+ "VALUES (:id_usuario, :id_correo, :tipo)", nativeQuery = true)
-	void insertarInformador(@Param("id_correo") Long id_correo, @Param("id_usuario") Long id_usuario, @Param("tipo") String tipo);
-
+		
+	void insertarInformador(@Param("id_usuario") Long id_usuario, @Param("id_correo") Long id_correo, @Param("tipo") String tipo);
 }
