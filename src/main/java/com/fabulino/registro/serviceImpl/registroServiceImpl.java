@@ -23,11 +23,24 @@ public class registroServiceImpl implements registroService{
 		@Override
 		public String guardar(DatosRegistroDto datosRegistroDto) {
 			try {
-
-				// Llama al método del repositorio pasando todo por parametros
-				repository.insertarCorreo(datosRegistroDto.getCorreo());
-				repository.insertarUsuario(datosRegistroDto.getNombre(), repository.getIdCorreo(datosRegistroDto.getCorreo()), datosRegistroDto.getContraseña() );
-				repository.insertarInformador(repository.getIdUsuario(datosRegistroDto.getNombre()), repository.getIdCorreo(datosRegistroDto.getCorreo()), datosRegistroDto.getTipo());
+				try {
+					if(repository.getNombreCorreo(datosRegistroDto.getCorreo()) == null) {
+						repository.insertarCorreo(datosRegistroDto.getCorreo());
+						repository.insertarUsuario(datosRegistroDto.getNombre(), repository.getIdCorreo(datosRegistroDto.getCorreo()), datosRegistroDto.getContraseña() );
+					}
+					
+					
+					repository.insertarInformador(repository.getIdUsuario(datosRegistroDto.getNombre()), repository.getIdCorreo(datosRegistroDto.getCorreo()), datosRegistroDto.getTipo());
+				}catch(Exception e){
+					String error = e.getMessage();
+					
+					if(error.contains("Query did not return a unique result")) {
+						return "Correo existente";
+					}else {
+						return "No se que error es" + error;
+					}
+				}
+				
 
 				return "Registro guardado correctamente";
 			} catch (Exception e) {

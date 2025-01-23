@@ -24,6 +24,10 @@ public interface registroRepository extends JpaRepository<registroEntityUsuario,
 	@Transactional
 	@Query(value = "SELECT id FROM correos WHERE correo = :correo", nativeQuery = true)
 	Long getIdCorreo(@Param("correo") String correo);
+	
+	@Transactional
+	@Query(value = "SELECT correo FROM correos WHERE correo = :correo", nativeQuery = true)
+	String getNombreCorreo(@Param("correo") String correo);
 
 	
 	@Modifying
