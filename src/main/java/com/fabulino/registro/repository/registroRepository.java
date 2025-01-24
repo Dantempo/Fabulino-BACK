@@ -32,7 +32,7 @@ public interface registroRepository extends JpaRepository<registroEntityUsuario,
 	
 	@Modifying
 	@Transactional
-	@Query(value = "INSERT INTO usuarios (nombre, correo, contraseña) "
+	@Query(value = "INSERT INTO usuarios (nombre, id_correo, contraseña) "
 			+ "VALUES (:nombre, :id_correo, :contraseña)", nativeQuery = true)
 	void insertarUsuario(@Param("nombre") String nombre, @Param("id_correo") Long id_correo,
 			@Param("contraseña") String contraseña);

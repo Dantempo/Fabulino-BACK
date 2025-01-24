@@ -35,7 +35,7 @@ public class registroEntityUsuario {
 	private String nombre;
 
 	@OneToOne
-	@JoinColumn(name = "correo", referencedColumnName = "id")
+	@JoinColumn(name = "id_correo", referencedColumnName = "id", nullable = false)
 	private registroEntityCorreo id_correo;
 
 
