@@ -11,7 +11,18 @@ public class EmojisMarcados {
 	private boolean timidez;
 	private boolean tristeza;
 	
-	
+    public EmojisMarcados() {
+    	super();
+        this.confusion = false;
+        this.emocion = false;
+        this.felicidad = false;
+        this.miedo = false;
+        this.rabia = false;
+        this.sorpresa = false;
+        this.timidez = false;
+        this.tristeza = false;
+    }
+		
 	public boolean isConfusion() {
 		return confusion;
 	}

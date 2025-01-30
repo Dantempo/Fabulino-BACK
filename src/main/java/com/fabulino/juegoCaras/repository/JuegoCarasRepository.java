@@ -13,8 +13,12 @@ public interface JuegoCarasRepository extends JpaRepository<JuegoCarasEntity, Lo
 
 	@Modifying
 	@Transactional
-	@Query(value = "INSERT INTO registros_caras (id_usuario, imagen, emocion, felicidad, miedo, rabia, sorpresa, timidez, tristeza, confusion, toques_confusion, toques_emocion, toques_felicidad, toques_miedo, toques_rabia, toques_sorpresa, toques_timidez, toques_tristeza, orden_emojis) "
-			+ "VALUES (:idUsuario, :imagen, :emocion, :felicidad, :miedo, :rabia, :sorpresa, :timidez, :tristeza, :confusion, :toques_confusion, :toques_emocion, :toques_felicidad, :toques_miedo, :toques_rabia, :toques_sorpresa, :toques_timidez, :toques_tristeza, :orden_emojis)", nativeQuery = true)
+	@Query(value = "INSERT INTO registros_caras (id_usuario, imagen, emocion, felicidad, miedo, rabia, sorpresa,"
+			+ " timidez, tristeza, confusion, toques_confusion, toques_emocion, toques_felicidad, toques_miedo, "
+			+ "toques_rabia, toques_sorpresa, toques_timidez, toques_tristeza, orden_emojis) "
+			+ "VALUES (:idUsuario, :imagen, :emocion, :felicidad, :miedo, :rabia, :sorpresa, :timidez, :tristeza,"
+			+ " :confusion, :toques_confusion, :toques_emocion, :toques_felicidad, :toques_miedo, :toques_rabia, :toques_sorpresa,"
+			+ " :toques_timidez, :toques_tristeza, :orden_emojis)", nativeQuery = true)
 	void insertRegistroCaras(
 			@Param("idUsuario") Long idUsuario,
 			@Param("imagen") int imagen,

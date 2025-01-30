@@ -20,31 +20,31 @@ public class JuegoCarasEntity {
 	private Long idUsuario;
 	
 	@Column(name = "imagen", nullable = false)
-	private int imagen;
+	private boolean imagen;
 	
 	@Column(name = "emocion", nullable = false)
-	private int emocion;
+	private boolean emocion;
 	
 	@Column(name = "felicidad", nullable = false)
-	private int felicidad;
+	private boolean felicidad;
 	
 	@Column(name = "miedo", nullable = false)
-	private int miedo;
+	private boolean miedo;
 	
 	@Column(name = "rabia", nullable = false)
-	private int rabia;
+	private boolean rabia;
 	
 	@Column(name = "sorpresa", nullable = false)
-	private int sorpresa;
+	private boolean sorpresa;
 	
 	@Column(name = "timidez", nullable = false)
-	private int timidez;
+	private boolean timidez;
 	
 	@Column(name = "tristeza", nullable = false)
-	private int tristeza;
+	private boolean tristeza;
 	
 	@Column(name = "confusion", nullable = false)
-	private int confusion;
+	private boolean confusion;
 	
 	@Column(name = "toques_confusion", nullable = false)
 	private int toques_confusion;
@@ -93,74 +93,74 @@ public class JuegoCarasEntity {
 	}
 
 	
-	public int getImagen() {
+	public boolean getImagen() {
 		return imagen;
 	}
-	public void setImagen(int imagen) {
+	public void setImagen(boolean imagen) {
 		this.imagen = imagen;
 	}
 
 	
-	public int getEmocion() {
+	public boolean getEmocion() {
 		return emocion;
 	}
-	public void setEmocion(int emocion) {
+	public void setEmocion(boolean emocion) {
 		this.emocion = emocion;
 	}
 
 	
-	public int getFelicidad() {
+	public boolean getFelicidad() {
 		return felicidad;
 	}
-	public void setFelicidad(int felicidad) {
+	public void setFelicidad(boolean felicidad) {
 		this.felicidad = felicidad;
 	}
 
 	
-	public int getMiedo() {
+	public boolean getMiedo() {
 		return miedo;
 	}
-	public void setMiedo(int miedo) {
+	public void setMiedo(boolean miedo) {
 		this.miedo = miedo;
 	}
 
 	
-	public int getRabia() {
+	public boolean getRabia() {
 		return rabia;
 	}
-	public void setRabia(int rabia) {
+	public void setRabia(boolean rabia) {
 		this.rabia = rabia;
 	}
 
 	
-	public int getSorpresa() {
+	public boolean getSorpresa() {
 		return sorpresa;
 	}
-	public void setSorpresa(int sorpresa) {
+	public void setSorpresa(boolean sorpresa) {
 		this.sorpresa = sorpresa;
 	}
 
 	
-	public int getTimidez() {
+	public boolean getTimidez() {
 		return timidez;
 	}
-	public void setTimidez(int timidez) {
+	public void setTimidez(boolean timidez) {
 		this.timidez = timidez;
 	}
 
 	
-	public int getTristeza() {
+	public boolean getTristeza() {
 		return tristeza;
 	}
-	public void setTristeza(int tristeza) {
+	public void setTristeza(boolean tristeza) {
 		this.tristeza = tristeza;
 	}
 
 	
-	public int getConfusion() {
+	public boolean getConfusion() {
 		return confusion;
 	}
-	public void setConfusion(int confusion) {
+	public void setConfusion(boolean confusion) {
 		this.confusion = confusion;
 	}
 

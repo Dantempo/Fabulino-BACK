@@ -11,7 +11,9 @@ public class NumeroCaras {
 	private int timidez;
 	private int tristeza;
 	
-	
+	public NumeroCaras() {
+		super();
+	}
 	public int getConfusion() {
 		return confusion;
 	}

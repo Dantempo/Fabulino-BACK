@@ -4,11 +4,13 @@ public class JuegoCarasDto {
 	
 	public Long id;
 	private String [] ordenEmojis;
-	private NumeroCaras numeroToques;
-	private EmojisMarcados emojisMarcados;
+	private NumeroCaras numToques;
+	private EmojisMarcados emjMarcados;
 	private int imagen;
 	
-	
+	public JuegoCarasDto() {
+		super();
+	}
 	public Long getId() {
 		return id;
 	}
@@ -24,17 +26,17 @@ public class JuegoCarasDto {
 	}
 	
 	public NumeroCaras getNumeroToques() {
-		return numeroToques;
+		return numToques;
 	}
 	public void setNumeroToques(NumeroCaras numeroToques) {
-		this.numeroToques = numeroToques;
+		this.numToques = numeroToques;
 	}
 	
 	public EmojisMarcados getEmojisMarcados() {
-		return emojisMarcados;
+		return emjMarcados;
 	}
 	public void setEmojisMarcados(EmojisMarcados emojisMarcados) {
-		this.emojisMarcados = emojisMarcados;
+		this.emjMarcados = emojisMarcados;
 	}
 	
 	public int getImagen() {
