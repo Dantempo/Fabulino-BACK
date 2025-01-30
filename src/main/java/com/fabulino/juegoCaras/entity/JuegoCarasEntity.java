@@ -20,7 +20,7 @@ public class JuegoCarasEntity {
 	private Long idUsuario;
 	
 	@Column(name = "imagen", nullable = false)
-	private boolean imagen;
+	private int imagen;
 	
 	@Column(name = "emocion", nullable = false)
 	private boolean emocion;
@@ -93,10 +93,10 @@ public class JuegoCarasEntity {
 	}
 
 	
-	public boolean getImagen() {
+	public int getImagen() {
 		return imagen;
 	}
-	public void setImagen(boolean imagen) {
+	public void setImagen(int imagen) {
 		this.imagen = imagen;
 	}
 

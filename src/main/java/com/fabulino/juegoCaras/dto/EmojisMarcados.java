@@ -48,4 +48,36 @@ public class EmojisMarcados {
 		return tristeza;
 	}
 
+	public void setConfusion(boolean confusion) {
+		this.confusion = confusion;
+	}
+
+	public void setEmocion(boolean emocion) {
+		this.emocion = emocion;
+	}
+
+	public void setFelicidad(boolean felicidad) {
+		this.felicidad = felicidad;
+	}
+
+	public void setMiedo(boolean miedo) {
+		this.miedo = miedo;
+	}
+
+	public void setRabia(boolean rabia) {
+		this.rabia = rabia;
+	}
+
+	public void setSorpresa(boolean sorpresa) {
+		this.sorpresa = sorpresa;
+	}
+
+	public void setTimidez(boolean timidez) {
+		this.timidez = timidez;
+	}
+
+	public void setTristeza(boolean tristeza) {
+		this.tristeza = tristeza;
+	}
+
 }

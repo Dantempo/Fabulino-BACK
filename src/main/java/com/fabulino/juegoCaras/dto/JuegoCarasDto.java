@@ -11,41 +11,47 @@ public class JuegoCarasDto {
 	public JuegoCarasDto() {
 		super();
 	}
+	
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 	public String[] getOrdenEmojis() {
 		return ordenEmojis;
 	}
+
 	public void setOrdenEmojis(String[] ordenEmojis) {
 		this.ordenEmojis = ordenEmojis;
 	}
-	
-	public NumeroCaras getNumeroToques() {
+
+	public NumeroCaras getNumToques() {
 		return numToques;
 	}
-	public void setNumeroToques(NumeroCaras numeroToques) {
-		this.numToques = numeroToques;
+
+	public void setNumToques(NumeroCaras numToques) {
+		this.numToques = numToques;
 	}
-	
-	public EmojisMarcados getEmojisMarcados() {
+
+	public EmojisMarcados getEmjMarcados() {
 		return emjMarcados;
 	}
-	public void setEmojisMarcados(EmojisMarcados emojisMarcados) {
-		this.emjMarcados = emojisMarcados;
+
+	public void setEmjMarcados(EmojisMarcados emjMarcados) {
+		this.emjMarcados = emjMarcados;
 	}
-	
+
 	public int getImagen() {
 		return imagen;
 	}
+
 	public void setImagen(int imagen) {
 		this.imagen = imagen;
 	}
-	
+
 	public String conversorString() {
 		String ordenEmojisAux = "";
 		for (String string : ordenEmojis) {

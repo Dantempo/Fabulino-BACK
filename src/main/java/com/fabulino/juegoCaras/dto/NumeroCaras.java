@@ -38,6 +38,30 @@ public class NumeroCaras {
 	public int getTristeza() {
 		return tristeza;
 	}
+	public void setConfusion(int confusion) {
+		this.confusion = confusion;
+	}
+	public void setEmocion(int emocion) {
+		this.emocion = emocion;
+	}
+	public void setFelicidad(int felicidad) {
+		this.felicidad = felicidad;
+	}
+	public void setMiedo(int miedo) {
+		this.miedo = miedo;
+	}
+	public void setRabia(int rabia) {
+		this.rabia = rabia;
+	}
+	public void setSorpresa(int sorpresa) {
+		this.sorpresa = sorpresa;
+	}
+	public void setTimidez(int timidez) {
+		this.timidez = timidez;
+	}
+	public void setTristeza(int tristeza) {
+		this.tristeza = tristeza;
+	}
 	
 	
 
